@@ -26,4 +26,4 @@ jobs:
     - name: Restore dotnet tools
       run: cd Mutation.Foo.Tests && dotnet tool restore
     - name: Mutation Test
-      run: dotnet stryker
+      run: cd Mutation.Foo.Tests && dotnet stryker
