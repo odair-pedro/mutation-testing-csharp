@@ -1,4 +1,4 @@
-name: build
+name: .NET Core Build
 
 on:
   push:
