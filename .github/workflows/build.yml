@@ -26,4 +26,4 @@ jobs:
     - name: Restore dotnet tools
       run: dotnet tool restore
     - name: Mutation Test
-      run: dotnet stryker -tp /home/runner/work/mutation-testing-csharp/mutation-testing-csharp/Mutation.Foo.Tests/Mutation.Foo.Tests.csproj -tr DotnetTest
+      run: dotnet stryker --test-projects "['Mutation.Foo.Tests/Mutation.Foo.Tests.csproj']"
