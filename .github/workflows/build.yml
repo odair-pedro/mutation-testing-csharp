@@ -26,4 +26,4 @@ jobs:
     - name: Restore dotnet tools
       run: dotnet tool restore
     - name: Mutation Test
-      run: dotnet stryker --test-projects "['Mutation.Foo.Tests/Mutation.Foo.Tests.csproj']"
+      run: dotnet stryker --test-projects "['Mutation.Foo.Tests/Mutation.Foo.Tests.csproj']" --reporters "['dashboard']" --dashboard-project "github.com/odair-pedro/mutation-testing-csharp/${GITHUB_REF#refs/heads/}" --dashboard-api-key ${STRYKER_API_KEY}
