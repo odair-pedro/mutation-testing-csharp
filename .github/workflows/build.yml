@@ -24,4 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Mutation Test
-      run: dotnet stryker
+      run: cd Mutation.Foo.Tests && dotnet stryker
