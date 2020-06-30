@@ -24,6 +24,6 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Restore dotnet tools
-      run: cd Mutation.Foo.Tests dotnet tool restore
+      run: cd Mutation.Foo.Tests && dotnet tool restore
     - name: Mutation Test
       run: dotnet stryker
