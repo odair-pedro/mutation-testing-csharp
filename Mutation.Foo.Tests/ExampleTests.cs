@@ -7,8 +7,8 @@ namespace Mutation.Foo.Tests
         [Fact]
         public void Concat_ShouldReturn_CorrectValue()
         {
-            var result = Example.ConcatValues("bar");
-            Assert.Equal("bar", result);
+            var result = Example.ConcatValues("foo", "bar");
+            Assert.Equal("foobar", result);
         }
     }
 }

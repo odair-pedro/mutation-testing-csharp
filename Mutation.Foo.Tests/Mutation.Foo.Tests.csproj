@@ -17,4 +17,8 @@
       <ProjectReference Include="..\Mutation.Foo\Mutation.Foo.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="StrykerOutput\**" />
+    </ItemGroup>
+
 </Project>
