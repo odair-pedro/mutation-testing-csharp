@@ -13,17 +13,28 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
+        
     - name: Install dependencies
       run: dotnet restore
+      
     - name: Build
       run: dotnet build --configuration Release --no-restore
+      
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal  
+                
     - name: Restore dotnet tools
       run: dotnet tool restore
+
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+      
     - name: Mutation Test
-      run: dotnet stryker --test-projects "['Mutation.Foo.Tests/Mutation.Foo.Tests.csproj']" --reporters "['dashboard']" --dashboard-project "github.com/odair-pedro/mutation-testing-csharp/${GITHUB_REF#refs/heads/}" --dashboard-api-key ${STRYKER_API_KEY}
+      run: dotnet stryker --test-projects "['Mutation.Foo.Tests/Mutation.Foo.Tests.csproj']" --reporters "['dashboard']" --dashboard-project "github.com/odair-pedro/mutation-testing-csharp/${{ steps.extract_branch.outputs.branch }}" --dashboard-api-key ${{ secrets.STRYKER_API_KEY }}
