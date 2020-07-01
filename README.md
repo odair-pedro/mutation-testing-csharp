@@ -48,9 +48,14 @@ If the mutation code break tests, it mean that the mutant has killed, which is g
 
 
 ## How to implement?
-In our example we are goingo to use [Stryker.NET](https://github.com/stryker-mutator/stryker-net)
+In our example we have used [Stryker.NET](https://github.com/stryker-mutator/stryker-net)
+
+A .NET implementation of [Stryker Mutator](https://stryker-mutator.io/)
+
 
 ### Stryker
+
+// TODO
 
 
 ## References
