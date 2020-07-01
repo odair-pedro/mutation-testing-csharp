@@ -9,4 +9,4 @@ A simple example to demonstrate you how to implement mutation testing into your 
 
 https://stryker-mutator.io/ 
 
-https://csharp.academy/mutation-testing/
+http://csharp.academy/mutation-testing/
