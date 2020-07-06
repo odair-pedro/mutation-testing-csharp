@@ -37,4 +37,4 @@ jobs:
       id: extract_branch
       
     - name: Mutation Test
-      run: dotnet stryker --test-projects "['Mutation.Foo.Tests/Mutation.Foo.Tests.csproj','Mutation.Foo.Tests/Mutation.Store.Example.Tests.csproj']" --reporters "['dashboard']" --dashboard-project "github.com/odair-pedro/mutation-testing-csharp/${{ steps.extract_branch.outputs.branch }}" --dashboard-api-key ${{ secrets.STRYKER_API_KEY }}
+      run: dotnet stryker --test-projects "['Mutation.Foo.Tests/Mutation.Foo.Tests.csproj','Mutation.Store.Example.Tests/Mutation.Store.Example.Tests.csproj']" --reporters "['dashboard']" --dashboard-project "github.com/odair-pedro/mutation-testing-csharp/${{ steps.extract_branch.outputs.branch }}" --dashboard-api-key ${{ secrets.STRYKER_API_KEY }}
