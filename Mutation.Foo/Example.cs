@@ -62,7 +62,7 @@ namespace Mutation.Foo
         
         public static bool VerifyNumberIsNatural(int number)
         {
-            return number > 0;
+            return number >= 0;
         }
     }
 }
