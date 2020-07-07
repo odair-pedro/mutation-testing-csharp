@@ -13,7 +13,7 @@ namespace Mutation.Foo
 
         public static string RemoveChars(string value)
         {
-            return Regex.Match(value, @"\D+").Value;
+            return Regex.Match(value, @"\d+").Value;
         }
 
         public static double SumTwoValues(double value1, double value2)

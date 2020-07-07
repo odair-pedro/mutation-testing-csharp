@@ -7,17 +7,17 @@ namespace Mutation.Foo.Tests
         [Fact]
         public void ConcatValues_ShouldReturn_CorrectValue()
         {
-            var result = Example.ConcatValues("foo");
+            var result = Example.ConcatValues("foo", "bar");
             
-            Assert.Equal("foo", result);
+            Assert.Equal("foobar", result);
         }
 
         [Fact]
         public void RemoveChars_ShouldReturn_CorrectValue()
         {
-            var result = Example.RemoveChars("123456789");
+            var result = Example.RemoveChars("abcdef_!@*&*@(*%1234");
             
-            Assert.Equal(string.Empty, result);
+            Assert.Equal("1234", result);
         }
 
         [Fact]
