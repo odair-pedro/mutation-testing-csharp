@@ -1,4 +1,4 @@
-name: Stryker Analyze Mutation.Store.Example
+name: Stryker Analyze Mutation.Foo
 
 on:
   push:
