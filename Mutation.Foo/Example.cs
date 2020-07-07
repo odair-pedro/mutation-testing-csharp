@@ -11,6 +11,11 @@ namespace Mutation.Foo
             return string.Join(string.Empty, values);
         }
 
+        public static int CountWordsInText(string text)
+        {
+            return string.IsNullOrWhiteSpace(text) ? default : text.Split(" ").Length;
+        }
+
         public static string RemoveCharsAndSymbols(string value)
         {
             return Regex.Match(value, @"\d+").Value;
@@ -63,6 +68,15 @@ namespace Mutation.Foo
         public static bool VerifyNumberIsNatural(int number)
         {
             return number >= 0;
+        }
+        
+        public static int[] CalculateFibonacci(int maxValue = 100, int[] sequence = default)
+        {
+            if ((sequence ??= new[] { 0, 1, 1 }).Last() == maxValue)
+                return sequence;
+
+            var newValue = sequence[^1] + sequence[^2];
+            return newValue > maxValue ? sequence : CalculateFibonacci(maxValue, sequence.Concat(new[] { newValue }).ToArray());
         }
     }
 }
