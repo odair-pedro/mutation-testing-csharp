@@ -1,0 +1,31 @@
+name: Stryker Analyze Mutation.Store.Example
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.300
+                
+    - name: Restore dotnet tools
+      run: dotnet tool restore
+
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+      
+    - name: Mutation.Foo Test
+      run: dotnet stryker --test-projects "['Mutation.Foo.Tests/Mutation.Foo.Tests.csproj']" --reporters "['dashboard']" --dashboard-project "github.com/odair-pedro/mutation-testing-csharp/${{ steps.extract_branch.outputs.branch }}-mutation-foo" --dashboard-api-key ${{ secrets.STRYKER_API_KEY }}
