@@ -12,7 +12,7 @@ It is a simple example to demonstrate you how to implement mutation testing into
 ## What mutation testing is?
 Mutation testing is an approach to help you to check if your unit tests are effective enough.
 
-The main idea is to create a mutant code which is a modified version of your code and run the existing unit tests agains this mutant code, instead of original code.
+The main idea is to create a mutant code which is a modified version of your code and run the existing unit tests against this mutant code, instead of original code.
 If the mutation code break tests, it mean that the mutant has killed, which is good. If the mutation code doesn't break tests then the mutant survived, which is not so good. In other words... we espect that the unit tests fails:
 
 `mutated code + failed tests = killed mutant` :heavy_check_mark:

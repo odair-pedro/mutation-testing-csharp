@@ -13,9 +13,9 @@ namespace Mutation.Foo.Tests
         }
 
         [Fact]
-        public void RemoveChars_ShouldReturn_CorrectValue()
+        public void RemoveCharsAndSymbols_ShouldReturn_CorrectValue()
         {
-            var result = Example.RemoveChars("abcdef_!@*&*@(*%1234");
+            var result = Example.RemoveCharsAndSymbols("abcdef_!@*&*@(*%1234");
             
             Assert.Equal("1234", result);
         }
