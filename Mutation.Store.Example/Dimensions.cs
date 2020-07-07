@@ -17,7 +17,7 @@ namespace Mutation.Store.Example
 
         public override string ToString()
         {
-            if (Height == 0 && Width == 0 && Depth == 0)
+            if (Height == 0 || Width == 0 || Depth == 0)
                 return "No dimensions";
             
             return $"HxWxD: {Height}x{Width}x{Depth}";;
