@@ -23,23 +23,23 @@ namespace Mutation.Foo.Tests
         [Fact]
         public void SumTwoValues_ShouldReturn_CorrectValue()
         {
-            var result = Example.SumTwoValues(1, 0);
-            
-            Assert.Equal(1, result);
-        }
-
-        [Fact]
-        public void MultiplyTwoValues_ShouldReturn_CorrectValue()
-        {
-            var result = Example.MultiplyTwoValues(2, 1);
+            var result = Example.SumTwoValues(1, 1);
             
             Assert.Equal(2, result);
         }
 
         [Fact]
+        public void MultiplyTwoValues_ShouldReturn_CorrectValue()
+        {
+            var result = Example.MultiplyTwoValues(2, 2);
+            
+            Assert.Equal(4, result);
+        }
+
+        [Fact]
         public void FilterValuesBiggerThan_ShouldReturn_CorrectValues()
         {
-            var result = Example.FilterValuesBiggerThan(50, 100, 200, 300, 400);
+            var result = Example.FilterValuesBiggerThan(50, 1, 50, 100, 200, 300, 400);
             
             Assert.Collection(result,
                 first => Assert.Equal(100, first),
@@ -55,6 +55,17 @@ namespace Mutation.Foo.Tests
             
             Assert.True(result);
         }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(4)]
+        public void VerifyNumberIsPrime_ShouldReturn_False(uint number)
+        {
+            var result = Example.VerifyNumberIsPrime(number);
+            
+            Assert.False(result);
+        }
         
         [Fact]
         public void VerifyNumberIsComposite_ShouldReturn_True()
@@ -64,12 +75,33 @@ namespace Mutation.Foo.Tests
             Assert.True(result);
         }
 
-        [Fact]
-        public void VerifyNumberIsNatural_ShouldReturn_True()
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(5)]
+        public void VerifyNumberIsComposite_ShouldReturn_False(uint number)
         {
-            var result = Example.VerifyNumberIsNatural(100);
+            var result = Example.VerifyNumberIsComposite(number);
+            
+            Assert.False(result);
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(100)]
+        public void VerifyNumberIsNatural_ShouldReturn_True(int number)
+        {
+            var result = Example.VerifyNumberIsNatural(number);
             
             Assert.True(result);
+        }
+        
+        [Fact]
+        public void VerifyNumberIsNatural_ShouldReturn_False()
+        {
+            var result = Example.VerifyNumberIsNatural(-100);
+            
+            Assert.False(result);
         }
     }
 }
