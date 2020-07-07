@@ -15,9 +15,9 @@ namespace Mutation.Foo.Tests
         [Fact]
         public void CountWordsInText_ShouldReturn_CorrectValue()
         {
-            var result = Example.CountWordsInText("foo");
+            var result = Example.CountWordsInText("foo bar");
             
-            Assert.Equal(1, result);
+            Assert.Equal(2, result);
         }
 
         [Fact]
@@ -112,12 +112,44 @@ namespace Mutation.Foo.Tests
             Assert.False(result);
         }
         
-        [Fact]
-        public void CalculateFibonacci_WithMaxTen_LasValue_ShouldBe_Eigth()
+        [Theory]
+        [InlineData(8)]
+        [InlineData(9)]
+        [InlineData(10)]
+        public void CalculateFibonacci_WithMaxValue_LastValue_ShouldBe_Eigth(int maxValue)
         {
-            var result = Example.CalculateFibonacci(10);
+            var result = Example.CalculateFibonacci(maxValue);
             
             Assert.Equal(8, result[^1]);
+        }
+        
+        [Theory]
+        [InlineData(8)]
+        [InlineData(9)]
+        [InlineData(10)]
+        public void CalculateFibonacci_WithMaxValue_ShouldReturn_CorrectValues(int maxValue)
+        {
+            var result = Example.CalculateFibonacci(maxValue);
+            
+            Assert.Equal(new[] { 0, 1, 1, 2, 3, 5, 8 }, result);
+        }
+        
+        [Fact]
+        public void CalculateFibonacci_WithMaxOne_ShouldReturn_CorrectValues()
+        {
+            var result = Example.CalculateFibonacci(1);
+            
+            Assert.Equal(new[] { 0, 1, 1 }, result);
+        }
+        
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        public void CalculateFibonacci_WithMaxValue_ShouldReturn_Default(int maxValue)
+        {
+            var result = Example.CalculateFibonacci(maxValue);
+            
+            Assert.Equal(new[] { 0, 1, 1 }, result);
         }
     }
 }
