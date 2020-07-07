@@ -72,7 +72,7 @@ namespace Mutation.Foo
         
         public static int[] CalculateFibonacci(int maxValue = 100, int[] sequence = default)
         {
-            if ((sequence ??= new[] { 0, 1, 1 }).Last() == maxValue)
+            if ((sequence ??= new[] { 0, 1, 1 })[^1] == maxValue)
                 return sequence;
 
             var newValue = sequence[^1] + sequence[^2];
