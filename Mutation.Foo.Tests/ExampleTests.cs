@@ -13,6 +13,14 @@ namespace Mutation.Foo.Tests
         }
 
         [Fact]
+        public void CountWordsInText_ShouldReturn_CorrectValue()
+        {
+            var result = Example.CountWordsInText("foo");
+            
+            Assert.Equal(1, result);
+        }
+
+        [Fact]
         public void RemoveCharsAndSymbols_ShouldReturn_CorrectValue()
         {
             var result = Example.RemoveCharsAndSymbols("abcdef_!@*&*@(*%1234");
@@ -102,6 +110,14 @@ namespace Mutation.Foo.Tests
             var result = Example.VerifyNumberIsNatural(-100);
             
             Assert.False(result);
+        }
+        
+        [Fact]
+        public void CalculateFibonacci_WithMaxTen_LasValue_ShouldBe_Eigth()
+        {
+            var result = Example.CalculateFibonacci(10);
+            
+            Assert.Equal(8, result[^1]);
         }
     }
 }
