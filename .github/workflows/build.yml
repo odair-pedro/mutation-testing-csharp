@@ -34,10 +34,7 @@ jobs:
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      id: extract_branch
-      
-    - name: Mutation Foo Test
-      run: dotnet stryker --test-projects "['Mutation.Foo.Tests/Mutation.Foo.Tests.csproj']" --reporters "['dashboard']" --dashboard-project "github.com/odair-pedro/mutation-testing-csharp/${{ steps.extract_branch.outputs.branch }}-mutation-foo" --dashboard-api-key ${{ secrets.STRYKER_API_KEY }}
+      id: extract_branch   
       
     - name: Mutation Store Example Test
       run: dotnet stryker --test-projects "['Mutation.Store.Example.Tests/Mutation.Store.Example.Tests.csproj']" --reporters "['dashboard']" --dashboard-project "github.com/odair-pedro/mutation-testing-csharp/${{ steps.extract_branch.outputs.branch }}-mutation-store-example" --dashboard-api-key ${{ secrets.STRYKER_API_KEY }}    
