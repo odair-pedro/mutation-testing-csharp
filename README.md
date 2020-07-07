@@ -5,7 +5,7 @@
 |Project|Mutation Score|
 |--|--|
 |Mutation.Foo|[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fodair-pedro%2Fmutation-testing-csharp%2Fmaster-mutation-foo)](https://dashboard.stryker-mutator.io/reports/github.com/odair-pedro/mutation-testing-csharp/master-mutation-foo)|
-|Mutation.Store.Example|[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fodair-pedro%2Fmutation-testing-csharp%2Fmaster-score-example)](https://dashboard.stryker-mutator.io/reports/github.com/odair-pedro/mutation-testing-csharp/master-mutation-store-example)|
+|Mutation.Store.Example|[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fodair-pedro%2Fmutation-testing-csharp%2Fmaster-mutation-store-example)](https://dashboard.stryker-mutator.io/reports/github.com/odair-pedro/mutation-testing-csharp/master-mutation-store-example)|
 
 It is a simple example to demonstrate you how to implement mutation testing into your .NET Core/C# application
 
