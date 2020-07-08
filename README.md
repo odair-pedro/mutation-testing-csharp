@@ -58,7 +58,7 @@ In our example we have used [Stryker.NET](https://github.com/stryker-mutator/str
 
 
 ### Stryker
-First of all we need to install Stryker.NET tool. For that we have two installation options. Locally, just for a specific project. Or globally that can be used by any other project.
+First of all we need to install Stryker.NET tool. For that we have two installation options. Locally, just for a specific project. Or globally, that can be used by any other project.
 
 #### Local Installation
 To install locally run the follow commands on root folder of your test project:
@@ -72,20 +72,20 @@ dotnet tool install dotnet-stryker
 ```
 
 #### Global Installation
-To install the globally run the follow command:
+To install globally run the follow command:
 
 ```
 dotnet tool install -g dotnet-stryker
 ```
 
 #### Usage
-Bellow is the command that you use to run Stryker.NET. Just run it in your test project's root folder:
+Bellow is the command to run Stryker.NET. Just execute it in your test project's root folder:
 
 ```
 dotnet stryker
 ```
 
-And after execution you may to see something like the screen bellow:
+And then, you may to see something like the screen bellow:
 
 ![Screenshot](.files/stryker-screenshot.png)
 
