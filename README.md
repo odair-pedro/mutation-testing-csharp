@@ -102,7 +102,7 @@ The default type is a HTML page containing a dashboard, where you can see all th
 
 And is that! You can find more examples with Stryker and CI pipelines (GitHub Actions) in this repository. 
 
-Explore!! I hope you enjoy :smiley:
+Explore and enjoy :smiley:
 
 
 ## References
