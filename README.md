@@ -50,14 +50,57 @@ If the mutation code break tests, it mean that the mutant has killed, which is g
 |if (!x) { … }|if (x) { … }|
 
 
+---
+
 
 ## How to implement?
 In our example we have used [Stryker.NET](https://github.com/stryker-mutator/stryker-net). The [Stryker Mutator](https://stryker-mutator.io/) implementation for .NET Core/Framework
 
 
 ### Stryker
+First of all we need to install Stryker.NET tool. For that we have two installation options. Locally, just for a specific project. Or globally that can be used by any other project.
 
-// TODO
+#### Local Installation
+To install locally run the follow commands on root folder of your test project:
+
+``` 	
+dotnet new tool-manifest
+```
+
+```
+dotnet tool install dotnet-stryker
+```
+
+#### Global Installation
+To install the globally run the follow command:
+
+```
+dotnet tool install -g dotnet-stryker
+```
+
+#### Usage
+Bellow is the command that you use to run Stryker.NET. Just run it in your test project's root folder:
+
+```
+dotnet stryker
+```
+
+And after execution you may to see something like the screen bellow:
+
+![Screenshot](.files/stryker-screenshot.png)
+
+##### Report
+After each execution Stryker generate a report. 
+
+The default type is a HTML page containing a dashboard, where you can see all the mutations generated and wich mutation has killed or survived on your project.
+
+![Screenshot](.files/stryker-dash-screenshot-1.png)
+
+![Screenshot](.files/stryker-dash-screenshot-2.png)
+
+----
+
+And is that! You can find more examples with Stryker and CI pipelines (GitHub Actions) in this repository. I hope you enjoy :smiley:
 
 
 ## References
