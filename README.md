@@ -89,7 +89,7 @@ And after execution you may to see something like the screen bellow:
 
 ![Screenshot](.files/stryker-screenshot.png)
 
-##### Report
+#### Report
 After each execution Stryker generate a report. 
 
 The default type is a HTML page containing a dashboard, where you can see all the mutations generated and wich mutation has killed or survived on your project.
